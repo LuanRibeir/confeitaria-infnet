@@ -11,4 +11,15 @@ public class Cliente {
         this.telefone = telefone;
     }
     
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public int getTelefone() {
+        return telefone;
+    }
 }
