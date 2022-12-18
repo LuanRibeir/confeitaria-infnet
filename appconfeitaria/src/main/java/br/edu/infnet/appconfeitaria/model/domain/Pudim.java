@@ -1,5 +1,7 @@
 package br.edu.infnet.appconfeitaria.model.domain;
 
+import br.edu.infnet.appconfeitaria.model.exceptions.ValorZeradoException;
+
 public class Pudim extends Doce{
     private String tamanho;
     private boolean lactose;
@@ -12,6 +14,29 @@ public class Pudim extends Doce{
         this.tamanho = tamanho;
         this.lactose = lactose;
         this.quantidade = quantidade;
+    }
+
+    @Override
+    public float calcularValorPorKilo() {
+        float valorTotal = getValorKg() * getKilo();
+        float adicional = ((30 * valorTotal) / 100) * quantidade;
+
+        switch (tamanho.toUpperCase()) {
+            case "P":
+                adicional += 5;
+                break;
+            case "M":
+                adicional += 10;
+                break;
+            case "G":
+                adicional += 15;
+                break;
+            default:
+                adicional += 10;
+                break;
+        } 
+
+        return lactose ? valorTotal + adicional: valorTotal + adicional * 2;
     }
 
     @Override
@@ -29,6 +54,7 @@ public class Pudim extends Doce{
 
         return sb.toString();
     }
+
     public String getTamanho() {
         return tamanho;
     }
@@ -42,7 +68,7 @@ public class Pudim extends Doce{
     public void setLactose(boolean lactose) {
         this.lactose = lactose;
     }
-    
+
     public int getQuantidade() {
         return quantidade;
     }
