@@ -4,6 +4,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import br.edu.infnet.appconfeitaria.model.exceptions.PedidoSemClienteException;
+import br.edu.infnet.appconfeitaria.model.exceptions.PedidoSemDoceException;
+
 public class Pedido {
     private String descricao;
     private boolean web;
@@ -11,7 +14,18 @@ public class Pedido {
     private Cliente cliente;
     private List<Doce> doces;
 
-    public Pedido(){
+    public Pedido(Cliente cliente, List<Doce> doces) throws PedidoSemClienteException, PedidoSemDoceException{
+        if (cliente == null){
+            throw new PedidoSemClienteException("[ERRO] Cliente não está associado ao pedido!");
+        }
+
+        if (doces == null){
+            throw new PedidoSemDoceException("[ERRO] Pedido inválido, não há doces!");
+        }
+
+        this.cliente = cliente;
+        this.doces = doces;
+
         data = LocalDateTime.now();
     }
 
@@ -57,14 +71,9 @@ public class Pedido {
     public Cliente getCliente() {
         return cliente;
     }
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
 
     public List<Doce> getDoces() {
         return doces;
     }
-    public void setDoces(List<Doce> doces) {
-        this.doces = doces;
-    }
+
 }
