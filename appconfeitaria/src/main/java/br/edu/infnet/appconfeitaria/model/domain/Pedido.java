@@ -39,6 +39,10 @@ public class Pedido {
         }
     }
 
+    public String obterLinha() {
+        return this.getDescricao()+";"+this.getCliente()+";"+this.getDoces().size()+"\r\n";
+    }
+
     @Override
     public String toString() {
 
