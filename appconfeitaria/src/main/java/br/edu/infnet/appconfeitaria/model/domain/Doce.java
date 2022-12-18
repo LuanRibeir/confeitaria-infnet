@@ -15,7 +15,9 @@ public abstract class Doce {
         this.kilo = kilo;
         this.valorKg = valorKg;
     }
-    
+
+    public abstract float calcularValorPorKilo();
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
