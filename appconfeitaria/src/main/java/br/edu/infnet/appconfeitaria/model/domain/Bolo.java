@@ -14,6 +14,21 @@ public class Bolo extends Doce{
         this.saborCobertura = saborCobertura;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString());
+        sb.append(";");
+        sb.append(formato);
+        sb.append(";");
+        sb.append(saborCobertura);
+        sb.append(";");
+        sb.append(camadas);
+        sb.append(";");
+        sb.append(this.calcularValorPorKilo());
+
+        return super.toString();
+    }
     public String getFormato() {
         return formato;
     }
