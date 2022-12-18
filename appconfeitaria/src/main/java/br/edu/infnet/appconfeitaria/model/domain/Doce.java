@@ -1,6 +1,7 @@
 package br.edu.infnet.appconfeitaria.model.domain;
 
 import br.edu.infnet.appconfeitaria.model.exceptions.NumeroDeCamadasInvalidoException;
+import br.edu.infnet.appconfeitaria.model.exceptions.NumeroDeQuantidadeInvalidoException;
 import br.edu.infnet.appconfeitaria.model.exceptions.ValorZeradoException;
 
 public abstract class Doce {
@@ -26,7 +27,8 @@ public abstract class Doce {
         this.valorKg = valorKg;
     }
 
-    public abstract float calcularValorPorKilo() throws NumeroDeCamadasInvalidoException;
+    public abstract float calcularValorPorKilo() throws NumeroDeQuantidadeInvalidoException,
+                                                        NumeroDeCamadasInvalidoException;
 
     @Override
     public String toString(){
