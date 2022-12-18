@@ -1,5 +1,6 @@
 package br.edu.infnet.appconfeitaria.model.domain;
 
+import br.edu.infnet.appconfeitaria.model.exceptions.NumeroDeQuantidadeInvalidoException;
 import br.edu.infnet.appconfeitaria.model.exceptions.ValorZeradoException;
 
 public class Pudim extends Doce{
@@ -17,9 +18,13 @@ public class Pudim extends Doce{
     }
 
     @Override
-    public float calcularValorPorKilo() {
+    public float calcularValorPorKilo() throws NumeroDeQuantidadeInvalidoException{
         float valorTotal = getValorKg() * getKilo();
         float adicional = ((30 * valorTotal) / 100) * quantidade;
+
+        if(quantidade < 1) {
+            throw new NumeroDeQuantidadeInvalidoException("[ERRO] Número de quantidade inválido!!!");
+        }
 
         switch (tamanho.toUpperCase()) {
             case "P":
@@ -49,8 +54,6 @@ public class Pudim extends Doce{
         sb.append(lactose ? "S/Lactose" : "C/Lactose");
         sb.append(";");
         sb.append(quantidade);
-        sb.append(";");
-        sb.append(this.calcularValorPorKilo());
 
         return sb.toString();
     }
