@@ -1,6 +1,7 @@
 package br.edu.infnet.appconfeitaria.model.tests;
 
 import br.edu.infnet.appconfeitaria.model.domain.Pudim;
+import br.edu.infnet.appconfeitaria.model.exceptions.NumeroDeQuantidadeInvalidoException;
 import br.edu.infnet.appconfeitaria.model.exceptions.ValorZeradoException;
 
 public class PudimTest {
@@ -11,7 +12,7 @@ public class PudimTest {
 
             System.out.println(pudimP);
             System.out.println(pudimP.calcularValorPorKilo());
-        } catch (ValorZeradoException e) {
+        } catch (ValorZeradoException | NumeroDeQuantidadeInvalidoException e) {
             System.out.println(e.getMessage());
         }
 
@@ -21,7 +22,7 @@ public class PudimTest {
 
             System.out.println(pudimSemLactoseM);
             System.out.println(pudimSemLactoseM.calcularValorPorKilo());
-        } catch (ValorZeradoException e) {
+        } catch (ValorZeradoException | NumeroDeQuantidadeInvalidoException e) {
             System.out.println(e.getMessage());
         }
 
@@ -32,7 +33,18 @@ public class PudimTest {
             System.out.println(pudimG);
             System.out.println(pudimG.calcularValorPorKilo());
     
-        } catch (ValorZeradoException e) {
+        } catch (ValorZeradoException | NumeroDeQuantidadeInvalidoException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            Pudim pudimG2 = new Pudim("codigoteste3", "Pudim", "chocolate",
+            2, 25.0f, "G", true, 0);
+    
+            System.out.println(pudimG2);
+            System.out.println(pudimG2.calcularValorPorKilo());
+    
+        } catch (ValorZeradoException | NumeroDeQuantidadeInvalidoException e) {
             System.out.println(e.getMessage());
         }
     }
