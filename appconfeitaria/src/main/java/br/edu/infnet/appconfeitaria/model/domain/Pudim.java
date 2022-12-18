@@ -14,5 +14,24 @@ public class Pudim extends Doce{
         this.quantidade = quantidade;
     }
 
+    public String getTamanho() {
+        return tamanho;
+    }
+    public void setTamanho(String tamanho) {
+        this.tamanho = tamanho;
+    }
+
+    public boolean isLactose() {
+        return lactose;
+    }
+    public void setLactose(boolean lactose) {
+        this.lactose = lactose;
+    }
     
+    public int getQuantidade() {
+        return quantidade;
+    }
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
 }
