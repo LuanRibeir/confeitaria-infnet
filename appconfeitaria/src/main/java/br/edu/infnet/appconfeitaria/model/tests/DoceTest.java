@@ -4,6 +4,8 @@ import br.edu.infnet.appconfeitaria.model.domain.Bolo;
 import br.edu.infnet.appconfeitaria.model.domain.Pudim;
 import br.edu.infnet.appconfeitaria.model.domain.Torta;
 import br.edu.infnet.appconfeitaria.model.exceptions.NumeroDeCamadasInvalidoException;
+import br.edu.infnet.appconfeitaria.model.exceptions.NumeroDeCaracteresInvalidoException;
+import br.edu.infnet.appconfeitaria.model.exceptions.NumeroDeQuantidadeInvalidoException;
 import br.edu.infnet.appconfeitaria.model.exceptions.ValorZeradoException;
 
 public class DoceTest {
@@ -25,7 +27,7 @@ public class DoceTest {
 
             System.out.println(pudimP);
             System.out.println(pudimP.calcularValorPorKilo());
-        } catch (ValorZeradoException e) {
+        } catch (ValorZeradoException | NumeroDeQuantidadeInvalidoException e) {
             System.out.println(e.getMessage());
         }
 
@@ -35,7 +37,7 @@ public class DoceTest {
 
             System.out.println(tortaSalgadaVegana);
             System.out.println(tortaSalgadaVegana.calcularValorPorKilo());
-        } catch (ValorZeradoException e) {
+        } catch (ValorZeradoException | NumeroDeCaracteresInvalidoException e) {
             System.out.println(e.getMessage());
         }
     }
