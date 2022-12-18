@@ -16,4 +16,23 @@ public abstract class Doce {
         this.valorKg = valorKg;
     }
     
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getSabor() {
+        return sabor;
+    }
+
+    public int getKilo() {
+        return kilo;
+    }
+
+    public float getValorKg() {
+        return valorKg;
+    }
 }
