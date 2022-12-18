@@ -14,6 +14,21 @@ public class Pudim extends Doce{
         this.quantidade = quantidade;
     }
 
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString());
+        sb.append(";");
+        sb.append(tamanho);
+        sb.append(";");
+        sb.append(lactose ? "S/Lactose" : "C/Lactose");
+        sb.append(";");
+        sb.append(quantidade);
+        sb.append(";");
+        sb.append(this.calcularValorPorKilo());
+
+        return sb.toString();
+    }
     public String getTamanho() {
         return tamanho;
     }
