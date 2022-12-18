@@ -14,4 +14,25 @@ public class Torta extends Doce{
         this.isDoce = doce;
     }
     
+
+    public Boolean getVegana() {
+        return vegana;
+    }
+    public void isVegana(Boolean vegana) {
+        this.vegana = vegana;
+    }
+
+    public String getDecoracao() {
+        return decoracao;
+    }
+    public void setDecoracao(String decoracao) {
+        this.decoracao = decoracao;
+    }
+
+    public Boolean getIsDoce() {
+        return isDoce;
+    }
+    public void setIsDoce(Boolean isDoce) {
+        this.isDoce = isDoce;
+    }
 }
