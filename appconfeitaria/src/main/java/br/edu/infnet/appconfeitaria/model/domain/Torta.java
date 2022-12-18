@@ -1,5 +1,7 @@
 package br.edu.infnet.appconfeitaria.model.domain;
 
+import br.edu.infnet.appconfeitaria.model.exceptions.ValorZeradoException;
+
 public class Torta extends Doce{
     private boolean vegana;
     private String decoracao;
@@ -13,7 +15,21 @@ public class Torta extends Doce{
         this.decoracao = decoracao;
         this.isDoce = doce;
     }
-    
+
+    @Override
+    public float calcularValorPorKilo() {
+        float valorTotal = getValorKg() * getKilo();
+        float adicional = ((30 * valorTotal) / 100);
+        
+        if (isDoce) {
+            adicional += 10;
+        } else {
+            adicional += 15;
+        }
+
+        return vegana ? valorTotal + adicional * 2 : valorTotal + adicional;
+    }
+
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
@@ -50,4 +66,7 @@ public class Torta extends Doce{
     public void setIsDoce(Boolean isDoce) {
         this.isDoce = isDoce;
     }
+
+
+
 }
