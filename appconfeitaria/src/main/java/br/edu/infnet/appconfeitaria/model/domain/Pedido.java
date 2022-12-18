@@ -15,6 +15,16 @@ public class Pedido {
         data = LocalDateTime.now();
     }
 
+    public void imprimir(){
+        System.out.println("Pedido: " + toString());
+        System.out.println("Cliente: " + cliente);
+        System.out.println("Quantidade: " + doces.size());
+        System.out.println("Doces: ");
+        for (Doce doce : doces) {
+            System.out.println("- " + doce.getNome());
+        }
+    }
+
     @Override
     public String toString() {
 
