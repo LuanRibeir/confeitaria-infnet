@@ -11,6 +11,7 @@ import br.edu.infnet.appconfeitaria.model.domain.Bolo;
 import br.edu.infnet.appconfeitaria.model.domain.Pudim;
 import br.edu.infnet.appconfeitaria.model.domain.Torta;
 import br.edu.infnet.appconfeitaria.model.exceptions.ClienteInvalidoException;
+import br.edu.infnet.appconfeitaria.model.exceptions.NumeroDeCaracteresInvalidoException;
 import br.edu.infnet.appconfeitaria.model.exceptions.ValorZeradoException;
 
 
@@ -46,7 +47,7 @@ public class PedidoTest {
 
             doce2.add(tortaSalgadaVegana);
             doce3.add(tortaSalgadaVegana);
-        } catch (ValorZeradoException e) {
+        } catch (ValorZeradoException | NumeroDeCaracteresInvalidoException e) {
             System.out.println(e.getMessage());
         }
         
@@ -121,6 +122,19 @@ public class PedidoTest {
         } catch (ClienteInvalidoException e) {
             System.out.println(e.getMessage());
         }
+
+        // try {
+            // Cliente cl3 = new Cliente("joe", "doe", 0);
+
+            Pedido ped0 = new Pedido();
+            ped0.setDescricao("1 pedido");
+            ped0.setWeb(true);
+            ped0.setDoces(doce1);
+            // ped0.setCliente(cl3);
+            ped0.imprimir();
+        // } catch (ClienteInvalidoException e) {
+        //     System.out.println(e.getMessage());
+        // }
 
     }
 }
