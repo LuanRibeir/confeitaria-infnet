@@ -7,6 +7,9 @@ public class Pedido {
     private Cliente cliente;
     private List<Doce> doces;
     
+    public Pedido(){
+        data = LocalDateTime.now();
+    }
     public String getDescricao() {
         return descricao;
     }
