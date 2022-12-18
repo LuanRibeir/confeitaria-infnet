@@ -1,12 +1,15 @@
 package br.edu.infnet.appconfeitaria.model.domain;
 
+import br.edu.infnet.appconfeitaria.model.exceptions.NumeroDeCamadasInvalidoException;
+import br.edu.infnet.appconfeitaria.model.exceptions.ValorZeradoException;
+
 public class Bolo extends Doce{
     private String formato;
     private String saborCobertura;
     private int camadas;
 
     public Bolo(String codigo, String nome, String sabor, int kilo,
-                float valorKg, String formato, String saborCobertura, int camadas) {
+                float valorKg, String formato, String saborCobertura, int camadas) throws ValorZeradoException{
                     
         super(codigo, nome, sabor, kilo, valorKg);
         this.formato = formato;
@@ -15,7 +18,7 @@ public class Bolo extends Doce{
     }
 
     @Override
-    public String toString() {
+    public String toString(){
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
         sb.append(";");
@@ -24,21 +27,24 @@ public class Bolo extends Doce{
         sb.append(saborCobertura);
         sb.append(";");
         sb.append(camadas);
-        sb.append(";");
-        sb.append(this.calcularValorPorKilo());
 
-        return super.toString();
+        return sb.toString();
     }
 
     @Override
-    public float calcularValorPorKilo() {
+    public float calcularValorPorKilo() throws NumeroDeCamadasInvalidoException{
         float valorTotal = getValorKg() * getKilo();
-
         float adicional;
-        if ("quadrado".equals(formato)){
-            adicional = ((40 * valorTotal) / 100) * camadas;
+
+        if(camadas < 1) {
+            throw new NumeroDeCamadasInvalidoException("[ERRO] Número de camadas inválido!!!");
         }
-        adicional = ((30 * valorTotal) / 100) * camadas;
+
+        if ("quadrado".equals(formato.toLowerCase())){
+            adicional = ((40 * valorTotal) / 100) * camadas;
+        } else {
+            adicional = ((30 * valorTotal) / 100) * camadas;
+        }
 
         return valorTotal + adicional;
     }
