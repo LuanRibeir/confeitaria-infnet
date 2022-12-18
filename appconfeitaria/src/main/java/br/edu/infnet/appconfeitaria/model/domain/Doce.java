@@ -16,6 +16,24 @@ public abstract class Doce {
         this.valorKg = valorKg;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(codigo);
+        sb.append(";");
+        sb.append(nome);
+        sb.append(";");
+        sb.append(sabor);
+        sb.append(";");
+        sb.append(kilo);
+        sb.append(";");
+        sb.append(valorKg);
+        sb.append(";");
+        sb.append(this.calcularValorPorKilo());
+
+        return super.toString();
+    }
+
     public String getCodigo() {
         return codigo;
     }
