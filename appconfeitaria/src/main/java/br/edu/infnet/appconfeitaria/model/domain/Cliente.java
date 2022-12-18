@@ -10,7 +10,19 @@ public class Cliente {
         this.cpf = cpf;
         this.telefone = telefone;
     }
-    
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(nome);
+        sb.append(";");
+        sb.append(cpf);
+        sb.append(";");
+        sb.append(telefone);
+
+        return sb.toString();
+    }
+
     public String getNome() {
         return nome;
     }
