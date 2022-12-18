@@ -1,5 +1,8 @@
 package br.edu.infnet.appconfeitaria.model.domain;
 
+import br.edu.infnet.appconfeitaria.model.exceptions.NumeroDeCamadasInvalidoException;
+import br.edu.infnet.appconfeitaria.model.exceptions.ValorZeradoException;
+
 public abstract class Doce {
     private String codigo;
     private String nome;
@@ -7,8 +10,15 @@ public abstract class Doce {
     private int kilo;
     private float valorKg;
 
+    public Doce(String codigo, String nome, String sabor, int kilo, float valorKg) throws ValorZeradoException {
+        if (kilo == 0 || valorKg == 0){
+            throw new ValorZeradoException("[ERRO] Valor do kg está zerado!!");
+        }
 
-    public Doce(String codigo, String nome, String sabor, int kilo, float valorKg) {
+        if (kilo < 0 || valorKg < 0){
+            throw new ValorZeradoException("[ERRO] Valor do kg é negativo!!");
+        }
+
         this.codigo = codigo;
         this.nome = nome;
         this.sabor = sabor;
@@ -16,10 +26,10 @@ public abstract class Doce {
         this.valorKg = valorKg;
     }
 
-    public abstract float calcularValorPorKilo();
+    public abstract float calcularValorPorKilo() throws NumeroDeCamadasInvalidoException;
 
     @Override
-    public String toString() {
+    public String toString(){
         StringBuilder sb = new StringBuilder();
         sb.append(codigo);
         sb.append(";");
@@ -30,10 +40,8 @@ public abstract class Doce {
         sb.append(kilo);
         sb.append(";");
         sb.append(valorKg);
-        sb.append(";");
-        sb.append(this.calcularValorPorKilo());
 
-        return super.toString();
+        return sb.toString();
     }
 
     public String getCodigo() {
