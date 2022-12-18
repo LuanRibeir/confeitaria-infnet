@@ -14,6 +14,21 @@ public class Torta extends Doce{
         this.isDoce = doce;
     }
     
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString());
+        sb.append(";");
+        sb.append(vegana);
+        sb.append(";");
+        sb.append(decoracao);
+        sb.append(";");
+        sb.append(isDoce ? "DOCE" : "SALGADA");
+        sb.append(";");
+        sb.append(this.calcularValorPorKilo());
+
+        return sb.toString();
+    }
 
     public Boolean getVegana() {
         return vegana;
