@@ -12,6 +12,8 @@ import br.edu.infnet.appconfeitaria.model.domain.Pudim;
 import br.edu.infnet.appconfeitaria.model.domain.Torta;
 import br.edu.infnet.appconfeitaria.model.exceptions.ClienteInvalidoException;
 import br.edu.infnet.appconfeitaria.model.exceptions.NumeroDeCaracteresInvalidoException;
+import br.edu.infnet.appconfeitaria.model.exceptions.PedidoSemClienteException;
+import br.edu.infnet.appconfeitaria.model.exceptions.PedidoSemDoceException;
 import br.edu.infnet.appconfeitaria.model.exceptions.ValorZeradoException;
 
 
@@ -54,87 +56,95 @@ public class PedidoTest {
         try {
             Cliente cli0 = new Cliente("joe", "doe", 123456789);
 
-            Pedido ped0 = new Pedido();
+            Pedido ped0 = new Pedido(cli0, doce1);
             ped0.setDescricao("1 pedido");
             ped0.setWeb(true);
-            ped0.setDoces(doce1);
-            ped0.setCliente(cli0);
             ped0.imprimir();
 
-            Pedido ped1 = new Pedido();
+            Pedido ped1 = new Pedido(cli0, doce2);
             ped1.setDescricao("2 pedido");
             ped1.setWeb(false);
-            ped1.setDoces(doce2);
-            ped1.setCliente(cli0);
             ped1.imprimir();
 
-        } catch (ClienteInvalidoException e) {
+        } catch (ClienteInvalidoException | PedidoSemClienteException | PedidoSemDoceException e) {
             System.out.println(e.getMessage());
         }
 
         try {
             Cliente cli1 = new Cliente("joe", "doe", 123456789);
-            Pedido ped2 = new Pedido();
+
+            Pedido ped2 = new Pedido(cli1, doce3);
             ped2.setDescricao("3 pedido");
             ped2.setWeb(true);
-            ped2.setDoces(doce3);
-            ped2.setCliente(cli1);
             ped2.imprimir();
-        } catch (ClienteInvalidoException e) {
+        } catch (ClienteInvalidoException | PedidoSemClienteException | PedidoSemDoceException e) {
             System.out.println(e.getMessage());
         }
 
         try {
             Cliente cli2 = new Cliente(null, "doe", 123456789);
 
-            Pedido ped0 = new Pedido();
+            Pedido ped0 = new Pedido(cli2, doce1);
             ped0.setDescricao("1 pedido");
             ped0.setWeb(true);
-            ped0.setDoces(doce1);
-            ped0.setCliente(cli2);
             ped0.imprimir();
-        } catch (ClienteInvalidoException e) {
+        } catch (ClienteInvalidoException | PedidoSemClienteException | PedidoSemDoceException e) {
             System.out.println(e.getMessage());
         }
 
         try {
             Cliente cli2 = new Cliente("joe", null, 123456789);
 
-            Pedido ped0 = new Pedido();
+            Pedido ped0 = new Pedido(cli2, doce1);
             ped0.setDescricao("1 pedido");
             ped0.setWeb(true);
-            ped0.setDoces(doce1);
-            ped0.setCliente(cli2);
             ped0.imprimir();
-        } catch (ClienteInvalidoException e) {
+        } catch (ClienteInvalidoException | PedidoSemClienteException | PedidoSemDoceException e) {
             System.out.println(e.getMessage());
         }
 
         try {
             Cliente cli2 = new Cliente("joe", "doe", 0);
 
-            Pedido ped0 = new Pedido();
+            Pedido ped0 = new Pedido(cli2, doce1);
             ped0.setDescricao("1 pedido");
             ped0.setWeb(true);
-            ped0.setDoces(doce1);
-            ped0.setCliente(cli2);
             ped0.imprimir();
-        } catch (ClienteInvalidoException e) {
+        } catch (ClienteInvalidoException | PedidoSemClienteException | PedidoSemDoceException e) {
             System.out.println(e.getMessage());
         }
 
-        // try {
-            // Cliente cl3 = new Cliente("joe", "doe", 0);
-
-            Pedido ped0 = new Pedido();
+        try {
+            Cliente cli3 = new Cliente("joe", "doe", 0);
+            Pedido ped0 = new Pedido(cli3, doce1);
             ped0.setDescricao("1 pedido");
             ped0.setWeb(true);
-            ped0.setDoces(doce1);
-            // ped0.setCliente(cl3);
             ped0.imprimir();
-        // } catch (ClienteInvalidoException e) {
-        //     System.out.println(e.getMessage());
-        // }
+        } catch (ClienteInvalidoException | PedidoSemClienteException | PedidoSemDoceException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            Cliente cli4 = new Cliente("joe", "doe", 10);
+            
+            Pedido ped4 = new Pedido(null, doce1);
+            ped4.setDescricao("1 pedido");
+            ped4.setWeb(true);
+            ped4.imprimir();
+        } catch (ClienteInvalidoException | PedidoSemClienteException | PedidoSemDoceException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            Cliente cli4 = new Cliente("joe", "doe", 10);
+            
+            Pedido ped4 = new Pedido(cli4, null);
+            ped4.setDescricao("1 pedido");
+            ped4.setWeb(true);
+            ped4.imprimir();
+        } catch (ClienteInvalidoException | PedidoSemClienteException | PedidoSemDoceException e) {
+            System.out.println(e.getMessage());
+        }
 
     }
 }
