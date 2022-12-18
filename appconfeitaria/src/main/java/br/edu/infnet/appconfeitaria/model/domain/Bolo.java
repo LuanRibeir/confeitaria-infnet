@@ -13,7 +13,7 @@ public class Bolo extends Doce{
         this.camadas = camadas;
         this.saborCobertura = saborCobertura;
     }
-    
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -29,6 +29,20 @@ public class Bolo extends Doce{
 
         return super.toString();
     }
+
+    @Override
+    public float calcularValorPorKilo() {
+        float valorTotal = getValorKg() * getKilo();
+
+        float adicional;
+        if ("quadrado".equals(formato)){
+            adicional = ((40 * valorTotal) / 100) * camadas;
+        }
+        adicional = ((30 * valorTotal) / 100) * camadas;
+
+        return valorTotal + adicional;
+    }
+
     public String getFormato() {
         return formato;
     }
@@ -50,4 +64,4 @@ public class Bolo extends Doce{
         this.camadas = camadas;
     }
 
-}
+}   
