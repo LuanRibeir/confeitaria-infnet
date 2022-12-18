@@ -1,15 +1,31 @@
 package br.edu.infnet.appconfeitaria.model.domain;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
 public class Pedido {
     private String descricao;
     private boolean web;
     private LocalDateTime data; 
     private Cliente cliente;
     private List<Doce> doces;
-    
+
     public Pedido(){
         data = LocalDateTime.now();
     }
+
+    @Override
+    public String toString() {
+
+        DateTimeFormatter formatoDataHora = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        
+        return String.format("%s;%s;%s",
+                    descricao,
+                    web ? "web" : "loja",
+                    data.format(formatoDataHora));
+    }
+
     public String getDescricao() {
         return descricao;
     }
