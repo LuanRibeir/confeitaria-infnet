@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 	<head>
 		<meta charset="ISO-8859-1" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,6 +7,6 @@
 		<title>AppConfeitaria</title>
 	</head>
 	<body>
-		Teste
+		<h2>Cadastro de <a href="/usuario">usuários</a></h1>
 	</body>
 </html>
