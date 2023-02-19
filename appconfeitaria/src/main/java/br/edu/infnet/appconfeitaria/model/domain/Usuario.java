@@ -5,9 +5,18 @@ public class Usuario {
     private String senha;
     private String email;
 
+    public Usuario() {
+    }
+
     public Usuario(String nome, String email){
+        this();
         this.setNome(nome);
         this.setEmail(email);
+    }
+
+    public Usuario(String nome, String email, String senha){
+        this(nome, email);
+        this.setSenha(senha);
     }
 
     @Override
