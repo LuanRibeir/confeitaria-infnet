@@ -1,14 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Cadastro de Usuario</title>
+<title>AppConfeitaria</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
 
 	<div class="container">
-	  <h2>Cadastro de Usuarios</h2>
+	  <h2>Cadastro de Usuário</h2>
 	  <form action="/usuario/incluir" method="post">
 
 	    <div class="form-group">
@@ -24,7 +26,7 @@
         <div class="form-group">
             <label>Senha:</label>
             <input value="senha" type="password" class="form-control" placeholder="Entre sua senha" name="senha">
-          </div>
+        </div>
 		
 	    <button type="submit" class="btn btn-default">Cadastrar</button>
 	  </form>
