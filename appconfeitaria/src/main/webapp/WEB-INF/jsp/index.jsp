@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
 	<head>
@@ -7,6 +9,6 @@
 		<title>AppConfeitaria</title>
 	</head>
 	<body>
-		<h2>Cadastro de <a href="/usuario">usuários</a></h1>
+		<h2>Lista de <a href="/usuario/lista">usuários</a></h1>
 	</body>
 </html>
