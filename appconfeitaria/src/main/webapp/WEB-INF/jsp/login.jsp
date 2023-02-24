@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +9,9 @@
 </head>
 <body>
 	<div class="container">
-	  <h2>Autenticação</h2>
-	  <form action="/login" method="post">
+		<h2>Autenticação</h2>
+
+		<form action="/login" method="post">
 
 	    <div class="form-group">
 	      <label>E-mail:</label>
@@ -19,7 +20,7 @@
 
 	    <div class="form-group">
 	      <label>Senha:</label>
-	      <input value="senha" type="password" class="form-control" placeholder="Entre com a sua senha" name="senha">
+	      <input value="luan.almeida@al.infnet.edu.br" type="password" class="form-control" placeholder="Entre com a sua senha" name="senha">
 	    </div>
 
 	    <button type="submit" class="btn btn-default">Acessar</button>
