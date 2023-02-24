@@ -2,21 +2,21 @@ package br.edu.infnet.appconfeitaria.model.domain;
 
 public class Usuario {
     private String nome;
-    private String senha;
     private String email;
+    private String senha;
 
     public Usuario() {
     }
 
-    public Usuario(String nome, String email){
+    public Usuario(String email, String senha){
         this();
-        this.setNome(nome);
         this.setEmail(email);
+        this.setSenha(senha);
     }
 
     public Usuario(String nome, String email, String senha){
-        this(nome, email);
-        this.setSenha(senha);
+        this(email, senha);
+        this.setNome(nome);
     }
 
     @Override
