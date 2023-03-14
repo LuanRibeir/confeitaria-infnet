@@ -3,6 +3,7 @@ package br.edu.infnet.appconfeitaria.model.domain;
 import br.edu.infnet.appconfeitaria.model.exceptions.ClienteInvalidoException;
 
 public class Cliente {
+    private Integer id;
     private String nome;
     private String cpf;
     private int telefone;

@@ -5,6 +5,7 @@ import br.edu.infnet.appconfeitaria.model.exceptions.NumeroDeQuantidadeInvalidoE
 import br.edu.infnet.appconfeitaria.model.exceptions.ValorZeradoException;
 
 public abstract class Doce {
+    private Integer id;
     private String codigo;
     private String nome;
     private String sabor;
@@ -44,6 +45,13 @@ public abstract class Doce {
         sb.append(valorKg);
 
         return sb.toString();
+    }
+
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getCodigo() {
