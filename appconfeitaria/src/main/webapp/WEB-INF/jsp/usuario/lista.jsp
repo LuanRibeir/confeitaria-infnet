@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,13 +9,26 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>	
-	<div class="container">
-		<form action="/usuario" method="get">
-            <h3>Listagem de Usuários</h3>
-			<button type="submit" class="btn btn-link">Novo</button>
-		</form>
-		
-	<table class="table table-striped">
+  <div class="container">
+    <h3>Listagem de Usuários</h3>
+
+    <c:if test="${empty usuarios}">
+      <div class="alert alert-info">
+				<strong>Atenção!</strong> Não existem usuários cadastrados.
+			</div>
+    </c:if>
+
+    <c:if test="${not empty usuarios}">       
+      <div class="alert alert-success">
+				<strong>Sucesso!</strong> ${mensagem} Quantidade de usuários cadastrados: ${usuarios.size()}.
+			</div>
+    </c:if>
+
+    <form action="/usuario" method="get">
+      <button type="submit" class="btn btn-default">Novo</button>
+    </form>
+
+  <table class="table table-striped">
     <thead>
       <tr>
         <th>Nome</th>
@@ -23,28 +37,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Luan</td>
-        <td>luan.almeida@al.infnet.edu.br></td>
-        <td>senha</td>
-      </tr>
-      <tr>
-        <td>Luan</td>
-        <td>luan.almeida@al.infnet.edu.br></td>
-        <td>senha</td>
-      </tr>
-      <tr>
-        <td>Luan</td>
-        <td>luan.almeida@al.infnet.edu.br></td>
-        <td>senha</td>
-      </tr>
-      <tr>
-        <td>Luan</td>
-        <td>luan.almeida@al.infnet.edu.br></td>
-        <td>senha</td>
-      </tr>
+      <c:forEach var="u" items="${usuarios}" >
+        <tr>
+          <td>${u.nome}</td>
+          <td>${u.email}</td>
+          <td>${u.senha}</td>
+        </tr>
+      </c:forEach>
     </tbody>
-  	</table>		
-	</div>
+    </table>		
+  </div>
 </body>
 </html>
