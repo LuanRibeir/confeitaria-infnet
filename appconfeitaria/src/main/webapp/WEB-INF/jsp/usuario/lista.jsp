@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>	
+  <c:import url="/WEB-INF/jsp/navbar.jsp"/>
   <div class="container">
     <h3>Listagem de Usuários</h3>
 
@@ -23,11 +24,7 @@
 				<strong>Atenção!</strong> Não existem usuários cadastrados.
 			</div>
     </c:if>
-
-    <form action="/usuario" method="get">
-      <button type="submit" class="btn btn-default">Novo</button>
-    </form>
-
+    
   <table class="table table-striped">
     <thead>
       <tr>
