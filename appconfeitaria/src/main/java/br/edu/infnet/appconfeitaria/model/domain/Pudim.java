@@ -1,5 +1,7 @@
 package br.edu.infnet.appconfeitaria.model.domain;
 
+import java.text.DecimalFormat;
+
 import br.edu.infnet.appconfeitaria.model.exceptions.NumeroDeQuantidadeInvalidoException;
 import br.edu.infnet.appconfeitaria.model.exceptions.ValorZeradoException;
 
@@ -41,7 +43,11 @@ public class Pudim extends Doce{
                 break;
         } 
 
-        return lactose ? valorTotal + adicional: valorTotal + adicional * 2;
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        float valorTotalFormatado = Float.valueOf(decimalFormat.format(valorTotal + adicional));
+        float valorTotalFormatadoSemLactose = Float.valueOf(decimalFormat.format(valorTotal + adicional * 2));
+
+        return lactose ? valorTotalFormatadoSemLactose : valorTotalFormatado;
     }
 
     @Override
