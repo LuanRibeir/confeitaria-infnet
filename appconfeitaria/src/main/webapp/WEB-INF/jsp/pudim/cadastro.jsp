@@ -62,8 +62,8 @@
       </div>
 
       <div>
+        <label for="lactose">Intolerância à lactose:</label>
         <input type="checkbox" id="lactose" name="lactose">
-        <label for="lactose">Intolerância à lactose</label>
       </div>
 
       <div class="form-group">

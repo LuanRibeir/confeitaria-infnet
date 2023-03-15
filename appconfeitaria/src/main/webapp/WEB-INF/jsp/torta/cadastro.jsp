@@ -54,13 +54,10 @@
               Salgada
             </label>
         </div>
-      </div>
-
       <div>
-        <input type="checkbox" id="vegana" name="vegana">
         <label for="vegana">Vegana:</label>
+        <input type="checkbox" id="vegana" name="vegana">
       </div>
-
       <div class="form-group">
         <label>Decoração:</label>
         <input value="asd" type="text" minlength="1" maxlength="20" class="form-control" placeholder="Entre a descrição da decoração" name="decoracao">
