@@ -14,12 +14,12 @@
             <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="/usuario/lista">Usúarios</a></li>
-              <li><a href="#">Clientes</a></li>
-              <li><a href="#">Doces</a></li>
-              <li><a href="#">Bolos</a></li>
-              <li><a href="#">Pudins</a></li>
-              <li><a href="#">Tortas</a></li>
-              <li><a href="#">Pedidos</a></li>
+              <li><a href="/cliente/lista">Clientes</a></li>
+              <li><a href="/doce/lista">Doces</a></li>
+              <li><a href="/bolo/lista">Bolos</a></li>
+              <li><a href="/pudim/lista">Pudins</a></li>
+              <li><a href="/torta/lista">Tortas</a></li>
+              <li><a href="/pedido/lista">Pedidos</a></li>
             </ul>
           </li>
       </c:if>
