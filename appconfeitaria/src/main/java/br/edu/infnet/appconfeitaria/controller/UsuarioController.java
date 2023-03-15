@@ -34,7 +34,7 @@ public class UsuarioController {
 
         msgAlerta = "Inclussão realizada!";
 
-        return "redirect:/usuario/lista";
+        return "redirect:/";
     }
 
     @GetMapping(value = "/usuario/{id}/excluir")
