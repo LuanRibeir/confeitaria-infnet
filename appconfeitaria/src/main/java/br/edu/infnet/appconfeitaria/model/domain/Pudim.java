@@ -7,7 +7,7 @@ import br.edu.infnet.appconfeitaria.model.exceptions.ValorZeradoException;
 
 public class Pudim extends Doce{
     private String tamanho;
-    private boolean lactose;
+    private Boolean lactose;
     private int quantidade;
 
     public Pudim(String codigo, String nome, String sabor, int kilo,
@@ -15,7 +15,7 @@ public class Pudim extends Doce{
                     
         super(codigo, nome, sabor, kilo, valorKg);
         this.tamanho = tamanho;
-        this.lactose = lactose;
+        this.lactose = (this.lactose == null) ? false : lactose;
         this.quantidade = quantidade;
     }
 
@@ -41,7 +41,7 @@ public class Pudim extends Doce{
             default:
                 adicional += 10;
                 break;
-        } 
+        }
 
         DecimalFormat decimalFormat = new DecimalFormat("#.##");
         float valorTotalFormatado = Float.valueOf(decimalFormat.format(valorTotal + adicional));
