@@ -1,5 +1,7 @@
 package br.edu.infnet.appconfeitaria.model.domain;
 
+import java.text.DecimalFormat;
+
 import br.edu.infnet.appconfeitaria.model.exceptions.NumeroDeCamadasInvalidoException;
 import br.edu.infnet.appconfeitaria.model.exceptions.ValorZeradoException;
 
@@ -46,7 +48,10 @@ public class Bolo extends Doce{
             adicional = ((30 * valorTotal) / 100) * camadas;
         }
 
-        return valorTotal + adicional;
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        float valorTotalFormatado = Float.valueOf(decimalFormat.format(valorTotal + adicional));
+
+        return valorTotalFormatado;
     }
 
     public String getFormato() {
