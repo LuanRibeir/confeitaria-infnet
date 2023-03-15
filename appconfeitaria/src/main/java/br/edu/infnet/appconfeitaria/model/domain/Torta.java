@@ -1,5 +1,7 @@
 package br.edu.infnet.appconfeitaria.model.domain;
 
+import java.text.DecimalFormat;
+
 import br.edu.infnet.appconfeitaria.model.exceptions.NumeroDeCaracteresInvalidoException;
 import br.edu.infnet.appconfeitaria.model.exceptions.ValorZeradoException;
 
@@ -28,7 +30,11 @@ public class Torta extends Doce{
             adicional += 15;
         }
 
-        return vegana ? valorTotal + adicional * 2 : valorTotal + adicional;
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        float valorTotalFormatado = Float.valueOf(decimalFormat.format(valorTotal + adicional));
+        float valorTotalFormatadoVegana = Float.valueOf(decimalFormat.format(valorTotal + adicional * 2));
+
+        return vegana ? valorTotalFormatadoVegana : valorTotalFormatado;
     }
 
     @Override
