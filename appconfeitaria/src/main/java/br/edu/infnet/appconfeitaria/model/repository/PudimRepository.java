@@ -4,13 +4,16 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Repository;
+
 import br.edu.infnet.appconfeitaria.model.domain.Pudim;
 
+@Repository
 public class PudimRepository {
     private static Integer id = 1;
     private static Map<Integer,Pudim> mapaPudim = new HashMap<Integer, Pudim>();
 
-    public static boolean incluir(Pudim pudim) {
+    public boolean incluir(Pudim pudim) {
         pudim.setId(id++);
 
         try {
@@ -21,11 +24,11 @@ public class PudimRepository {
         }
     }
 
-    public static Pudim excluir(Integer id) {
+    public Pudim excluir(Integer id) {
         return mapaPudim.remove(id);
     }
 
-    public static Collection<Pudim> obterLista(){
+    public Collection<Pudim> obterLista(){
         return mapaPudim.values();
     }
 }
