@@ -4,13 +4,16 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Repository;
+
 import br.edu.infnet.appconfeitaria.model.domain.Bolo;
 
+@Repository
 public class BoloRepository {
     private static Integer id = 1;
     private static Map<Integer,Bolo> mapaBolo = new HashMap<Integer, Bolo>();
 
-    public static boolean incluir(Bolo bolo) {
+    public boolean incluir(Bolo bolo) {
         bolo.setId(id++);
 
         try {
@@ -21,11 +24,11 @@ public class BoloRepository {
         }
     }
 
-    public static Bolo excluir(Integer id) {
+    public Bolo excluir(Integer id) {
         return mapaBolo.remove(id);
     }
 
-    public static Collection<Bolo> obterLista(){
+    public Collection<Bolo> obterLista(){
         return mapaBolo.values();
     }
 }
