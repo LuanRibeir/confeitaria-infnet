@@ -16,32 +16,32 @@
 
 	    <div class="form-group">
 	      <label>Código:</label>
-	      <input value="asdasd" type="text" minlength="6" maxlength="6" class="form-control" placeholder="Entre o código do doce" name="codigo">
+	      <input required type="text" minlength="6" maxlength="6" class="form-control" placeholder="Entre o código do doce" name="codigo">
 	    </div>
 
 	    <div class="form-group">
 	      <label>Nome:</label>
-	      <input value="asd" type="text" minlength="1" maxlength="20" class="form-control" placeholder="Entre o nome do doce" name="nome">
+	      <input required type="text" minlength="1" maxlength="20" class="form-control" placeholder="Entre o nome do doce" name="nome">
 	    </div>
 
         <div class="form-group">
             <label>Sabor:</label>
-            <input value="asd" type="text" minlength="1" maxlength="20" class="form-control" placeholder="Entre o sabor do doce" name="sabor">
+            <input required type="text" minlength="1" maxlength="20" class="form-control" placeholder="Entre o sabor do doce" name="sabor">
         </div>
 
         <div class="form-group">
             <label>Kilo:</label>
-            <input value="12" type="number" min="1" max="999" class="form-control" placeholder="Entre o kilo do doce" name="kilo">
+            <input required type="number" min="1" max="999" class="form-control" placeholder="Entre o kilo do doce" name="kilo">
         </div>
 
         <div class="form-group">
             <label>Valor Kilo:</label>
-            <input value="1.1" type="number" min="1" max="999" step="any" class="form-control" placeholder="Entre o valor por kilo do doce" name="valorKg">
+            <input required type="number" min="1" max="999" step="any" class="form-control" placeholder="Entre o valor por kilo do doce" name="valorKg">
         </div>
 
         <div class="form-group">
           <label>Sabor da Cobertura:</label>
-          <input value="asd" type="text" minlength="1" maxlength="20" class="form-control" placeholder="Entre o sabor da cobertura" name="saborCobertura">
+          <input required type="text" minlength="1" maxlength="20" class="form-control" placeholder="Entre o sabor da cobertura" name="saborCobertura">
       </div>
 
         <label>Formato:</label>
@@ -60,7 +60,7 @@
 
         <div class="form-group">
             <label>Camadas:</label>
-            <input value="12" type="number" min="1" max="999" class="form-control" placeholder="Entre o número de camadas" name="camadas">
+            <input required type="number" min="1" max="999" class="form-control" placeholder="Entre o número de camadas" name="camadas">
         </div>
 
         

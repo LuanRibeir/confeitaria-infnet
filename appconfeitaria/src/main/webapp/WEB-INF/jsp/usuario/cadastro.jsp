@@ -16,17 +16,17 @@
 
 	    <div class="form-group">
 	      <label>Nome:</label>
-	      <input value="Luan Ribeiro" type="text" class="form-control" placeholder="Entre com o seu nome" name="nome">
+	      <input required value="Luan Ribeiro" type="text" class="form-control" placeholder="Entre com o seu nome" name="nome">
 	    </div>
 
 	    <div class="form-group">
 	      <label>E-mail:</label>
-	      <input value="luan.almeida@al.infnet.edu.br" type="email" class="form-control" placeholder="Entre com o seu e-mail" name="email">
+	      <input required value="luan.almeida@al.infnet.edu.br" type="email" class="form-control" placeholder="Entre com o seu e-mail" name="email">
 	    </div>
 
         <div class="form-group">
             <label>Senha:</label>
-            <input value="senha" type="password" class="form-control" placeholder="Entre sua senha" name="senha">
+            <input required value="senha" type="password" class="form-control" placeholder="Entre sua senha" name="senha">
         </div>
 		
 	    <button type="submit" class="btn btn-default">Cadastrar</button>

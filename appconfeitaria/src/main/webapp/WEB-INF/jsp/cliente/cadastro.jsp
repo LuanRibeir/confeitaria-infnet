@@ -16,7 +16,7 @@
 
 	    <div class="form-group">
 	      <label>Nome:</label>
-	      <input required value="asd" type="text" minlength="1" maxlength="20" class="form-control" placeholder="Entre o nome:" name="nome">
+	      <input required type="text" minlength="1" maxlength="20" class="form-control" placeholder="Entre o nome:" name="nome">
 	    </div>
 
         <div class="form-group">
@@ -26,7 +26,7 @@
 
         <div class="form-group">
             <label>Telefone:</label>
-            <input required value="51911111111" type="number" min="1" max="9999999999" class="form-control" placeholder="Entre o telefone." name="telefone">
+            <input required type="number" min="1" max="9999999999" class="form-control" placeholder="Entre o telefone." name="telefone">
         </div>
 
 	    <button type="submit" class="btn btn-default">Cadastrar</button>
