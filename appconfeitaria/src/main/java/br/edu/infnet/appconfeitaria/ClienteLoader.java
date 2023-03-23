@@ -1,5 +1,9 @@
 package br.edu.infnet.appconfeitaria;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -15,9 +19,32 @@ public class ClienteLoader implements ApplicationRunner{
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Cliente cliente = new Cliente("Luan", "001.001.001-00", 1234567);
-        cliente.setId(1);
+        try {
+            String arq = "src/main/resources/static/clientes.txt";
+        try {
+            FileReader fReader = new FileReader(arq);
+            BufferedReader ler = new BufferedReader(fReader);
 
-        clienteService.incluir(cliente);
+            String linha = ler.readLine();
+            String[] campos = null;
+
+            while(linha != null){
+                campos = linha.split(";");
+
+                Cliente cliente = new Cliente(campos[0], campos[1], Integer.parseInt(campos[2]));
+
+                clienteService.incluir(cliente);
+
+                linha = ler.readLine();
+            }
+
+            ler.close();
+            fReader.close();
+        } catch (IOException e) {
+            System.out.println("[ERRO] " + e.getMessage());
+        }
+        } finally {
+            System.out.println("Processamento Finalizado!");
+        }
     }
 }
