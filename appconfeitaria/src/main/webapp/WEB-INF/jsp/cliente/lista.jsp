@@ -38,6 +38,7 @@
         <th>Nome</th>
         <th>CPF</th>
         <th>Telefone</th>
+        <th>Usuário</th>
       </tr>
     </thead>
     <tbody>
@@ -47,13 +48,14 @@
           <td>${u.nome}</td>
           <td>${u.cpf}</td>
           <td>${u.telefone}</td>
+          <td>${u.usuario.nome}</td>
           <td>
             <form action="/cliente/${u.id}/excluir" method="get">
               <button type="submit" class="btn btn-danger">
                 <span class="glyphicon glyphicon-remove"></span>
               </button>
             </form> 
-        </td>
+          </td>
         </tr>
       </c:forEach>
     </tbody>
