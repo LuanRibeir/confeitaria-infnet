@@ -2,13 +2,36 @@ package br.edu.infnet.appconfeitaria.model.domain;
 
 import br.edu.infnet.appconfeitaria.model.exceptions.ClienteInvalidoException;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "TableCliente")
 public class Cliente {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
     private String cpf;
     private int telefone;
 
+    @ManyToOne
+    @JoinColumn(name = "idUsuario")
+    private Usuario usuario;
+
+    public Cliente(){
+
+    }
+
     public Cliente(String nome, String cpf, int telefone) throws ClienteInvalidoException{
+        this();
+
         this.nome = nome;
         if(nome == null){
             throw new ClienteInvalidoException("[ERRO] Nome inválido!");
@@ -48,12 +71,30 @@ public class Cliente {
     public String getNome() {
         return nome;
     }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
     public String getCpf() {
         return cpf;
+    }
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public int getTelefone() {
         return telefone;
     }
+    public void setTelefone(int telefone) {
+        this.telefone = telefone;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
 }
