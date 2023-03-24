@@ -13,15 +13,19 @@ public class BoloService {
     @Autowired
     private BoloRepository boloRepository;
 
-    public boolean incluir(Bolo bolo) {
-        return boloRepository.incluir(bolo); 
+    public Bolo incluir(Bolo bolo) {
+        return boloRepository.save(bolo); 
     }
 
-    public Bolo excluir(Integer key){
-        return boloRepository.excluir(key);
+    public void excluir(Integer key){
+        boloRepository.deleteById(key);
     }
 
     public Collection<Bolo> obterLista(){
-        return boloRepository.obterLista();
+        return (Collection<Bolo>) boloRepository.findAll();
+    }
+
+    public Bolo obterLista(Integer id){
+        return boloRepository.findById(id).orElse(null);
     }
 }
