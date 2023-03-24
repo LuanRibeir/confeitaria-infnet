@@ -4,7 +4,11 @@ import java.text.DecimalFormat;
 
 import br.edu.infnet.appconfeitaria.model.exceptions.NumeroDeCamadasInvalidoException;
 import br.edu.infnet.appconfeitaria.model.exceptions.ValorZeradoException;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "TableBolo")
 public class Bolo extends Doce{
     private String formato;
     private String saborCobertura;
