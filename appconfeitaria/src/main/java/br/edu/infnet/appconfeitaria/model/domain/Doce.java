@@ -24,6 +24,10 @@ public abstract class Doce {
     private int kilo;
     private float valorKg;
 
+    public Doce(){
+        
+    }
+
     public Doce(String codigo, String nome, String sabor, int kilo, float valorKg) throws ValorZeradoException {
         if (kilo == 0 || valorKg == 0){
             throw new ValorZeradoException("[ERRO] Valor do kg está zerado!!");
@@ -69,20 +73,36 @@ public abstract class Doce {
     public String getCodigo() {
         return codigo;
     }
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
 
     public String getNome() {
         return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getSabor() {
         return sabor;
     }
+    public void setSabor(String sabor) {
+        this.sabor = sabor;
+    }
 
     public int getKilo() {
         return kilo;
     }
+    public void setKilo(Integer kilo) {
+        this.kilo = kilo;
+    }
 
     public float getValorKg() {
         return valorKg;
+    }
+    public void setValorKg(Float valorKg) {
+        this.valorKg = valorKg;
     }
 }

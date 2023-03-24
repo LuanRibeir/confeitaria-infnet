@@ -10,6 +10,10 @@ public class Pudim extends Doce{
     private Boolean lactose;
     private int quantidade;
 
+    public Pudim(){
+        
+    }
+
     public Pudim(String codigo, String nome, String sabor, int kilo,
                 float valorKg, String tamanho, Boolean lactose, int quantidade) throws ValorZeradoException{
                     

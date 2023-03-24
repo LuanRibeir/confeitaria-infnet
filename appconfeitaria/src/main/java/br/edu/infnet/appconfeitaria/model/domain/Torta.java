@@ -10,6 +10,10 @@ public class Torta extends Doce{
     private String decoracao;
     private Boolean isDoce; //doce ou salgada
 
+    public Torta(){
+        
+    }
+
     public Torta(String codigo, String nome, String sabor, int kilo,
                 float valorKg, Boolean vegana, String decoracao, Boolean doce)
                 throws ValorZeradoException, NumeroDeCaracteresInvalidoException{

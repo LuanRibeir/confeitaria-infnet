@@ -14,6 +14,10 @@ public class Bolo extends Doce{
     private String saborCobertura;
     private int camadas;
 
+    public Bolo(){
+        
+    }
+
     public Bolo(String codigo, String nome, String sabor, int kilo,
                 float valorKg, String formato, String saborCobertura, int camadas) throws ValorZeradoException{
                     
