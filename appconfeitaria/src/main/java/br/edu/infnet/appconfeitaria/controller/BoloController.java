@@ -42,7 +42,7 @@ public class BoloController {
 
     @GetMapping(value = "/bolo/{id}/excluir")
     public String excluir(@PathVariable Integer id) {
-        Bolo bolo = boloService.excluir(id);
+        boloService.excluir(id);
 
         msgAlerta = "Exclussão realizada!";
 
