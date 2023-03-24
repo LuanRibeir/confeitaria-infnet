@@ -1,5 +1,6 @@
 package br.edu.infnet.appconfeitaria.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,12 +10,16 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import br.edu.infnet.appconfeitaria.model.domain.Usuario;
-import br.edu.infnet.appconfeitaria.model.repository.AcessoRepository;
+import br.edu.infnet.appconfeitaria.model.service.UsuarioService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
 @SessionAttributes("usuario")
 public class AcessoController {
+
+    @Autowired
+    private UsuarioService usuarioService;
+
     @GetMapping(value = "/login")
     public String telaLogin() {
         return "login";
@@ -22,9 +27,9 @@ public class AcessoController {
 
     @PostMapping(value = "/login")
     public String login(Model model, @RequestParam String email, @RequestParam String senha) {
-
         Usuario usuario = new Usuario(email, senha);
-        usuario = AcessoRepository.autenticar(usuario);
+
+        usuario = usuarioService.autenticar(usuario);
 
         if(usuario != null) {
             model.addAttribute("usuario", usuario);
