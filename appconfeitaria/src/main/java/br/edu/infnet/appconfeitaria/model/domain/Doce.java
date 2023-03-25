@@ -1,5 +1,7 @@
 package br.edu.infnet.appconfeitaria.model.domain;
 
+import java.util.List;
+
 import br.edu.infnet.appconfeitaria.model.exceptions.NumeroDeCamadasInvalidoException;
 import br.edu.infnet.appconfeitaria.model.exceptions.NumeroDeQuantidadeInvalidoException;
 import br.edu.infnet.appconfeitaria.model.exceptions.ValorZeradoException;
@@ -10,6 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -28,6 +31,8 @@ public abstract class Doce {
     @ManyToOne
     @JoinColumn(name = "idUsuario")
     private Usuario usuario;
+    @ManyToMany(mappedBy = "doces")
+    private List<Pedido> pedidos;
 
     public Doce(){
         
@@ -116,5 +121,12 @@ public abstract class Doce {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
-    }    
+    }
+
+    public List<Pedido> getPedidos(){
+        return pedidos;
+    }
+    public void setPedidos(List<Pedido> pedidos){
+        this.pedidos = pedidos;
+    }
 }
