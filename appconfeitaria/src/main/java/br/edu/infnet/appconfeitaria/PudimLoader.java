@@ -11,6 +11,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appconfeitaria.model.domain.Pudim;
+import br.edu.infnet.appconfeitaria.model.domain.Usuario;
 import br.edu.infnet.appconfeitaria.model.service.PudimService;
 
 @Order(4)
@@ -33,11 +34,15 @@ public class PudimLoader implements ApplicationRunner{
             while(linha != null){
                 campos = linha.split(";");
 
+                Usuario usuario = new Usuario();
+                usuario.setId(1);
+
                 Pudim pudim = new Pudim(campos[0], campos[1], campos[2],
                                     Integer.parseInt(campos[3]), Float.parseFloat(campos[4]),
                                     campos[5], Boolean.parseBoolean(campos[6]), Integer.parseInt(campos[7]));
+                pudim.setUsuario(usuario);
 
-               pudimService.incluir(pudim);
+                pudimService.incluir(pudim);
 
                 linha = ler.readLine();
             }
