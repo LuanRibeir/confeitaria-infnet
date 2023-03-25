@@ -42,7 +42,7 @@ public class PudimController {
 
     @GetMapping(value = "/pudim/{id}/excluir")
     public String excluir(@PathVariable Integer id) {
-        Pudim pudim = pudimService.excluir(id);
+        pudimService.excluir(id);
 
         msgAlerta = "Exclussão realizada!";
 
