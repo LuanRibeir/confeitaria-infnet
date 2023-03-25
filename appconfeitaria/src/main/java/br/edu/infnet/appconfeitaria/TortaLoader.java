@@ -10,6 +10,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appconfeitaria.model.domain.Torta;
+import br.edu.infnet.appconfeitaria.model.domain.Usuario;
 import br.edu.infnet.appconfeitaria.model.service.TortaService;
 
 @Component
@@ -31,11 +32,15 @@ public class TortaLoader implements ApplicationRunner{
             while(linha != null){
                 campos = linha.split(";");
 
+                Usuario usuario = new Usuario();
+                usuario.setId(1);
+
                 Torta torta = new Torta(campos[0], campos[1], campos[2],
                                     Integer.parseInt(campos[3]), Float.parseFloat(campos[4]),
                                     Boolean.parseBoolean(campos[5]), campos[6], Boolean.parseBoolean(campos[7]));
-
-               tortaService.incluir(torta);
+                torta.setUsuario(usuario);
+                
+                tortaService.incluir(torta);
 
                 linha = ler.readLine();
             }

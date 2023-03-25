@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.appconfeitaria.model.domain.Torta;
+import br.edu.infnet.appconfeitaria.model.domain.Usuario;
 import br.edu.infnet.appconfeitaria.model.service.TortaService;
 
 @Controller
@@ -23,8 +25,8 @@ public class TortaController {
     }
 
     @GetMapping(value = "/torta/lista")
-    public String telaLista(Model model) {
-        model.addAttribute("tortas", tortaService.obterLista());
+    public String telaLista(Model model, @SessionAttribute("usuario") Usuario usuario) {
+        model.addAttribute("tortas", tortaService.obterLista(usuario));
         model.addAttribute("mensagem", msgAlerta);
         msgAlerta = null;
 
@@ -32,7 +34,9 @@ public class TortaController {
     }
 
     @PostMapping(value = "/torta/incluir")
-    public String incluir(Torta torta) {
+    public String incluir(Torta torta, @SessionAttribute("usuario") Usuario usuario) {
+        torta.setUsuario(usuario);
+
         tortaService.incluir(torta);
 
         msgAlerta = "Inclussão realizada!";
