@@ -13,15 +13,19 @@ public class TortaService {
     @Autowired
     private TortaRepository tortaRepository;
 
-    public boolean incluir(Torta torta) {
-        return tortaRepository.incluir(torta); 
+    public Torta incluir(Torta torta) {
+        return tortaRepository.save(torta); 
     }
 
-    public Torta excluir(Integer key){
-        return tortaRepository.excluir(key);
+    public void excluir(Integer key){
+        tortaRepository.deleteById(key);
     }
 
     public Collection<Torta> obterLista(){
-        return tortaRepository.obterLista();
+        return (Collection<Torta>) tortaRepository.findAll();
+    }
+
+    public Torta obterLista(Integer id){
+        return tortaRepository.findById(id).orElse(null);
     }
 }
