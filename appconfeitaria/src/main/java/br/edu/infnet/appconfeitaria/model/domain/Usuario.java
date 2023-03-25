@@ -26,6 +26,10 @@ public class Usuario {
     @OneToMany
     @JoinColumn(name = "idUsuario")
     private List<Doce> doces;
+    @OneToMany
+    @JoinColumn(name = "idUsuario")
+    private List<Pedido> pedidos;
+    
 
     public Usuario() {
     }
@@ -86,6 +90,13 @@ public class Usuario {
     }
     public void setDoces(List<Doce> doces) {
         this.doces = doces;
+    }
+
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
     }
 
 }
