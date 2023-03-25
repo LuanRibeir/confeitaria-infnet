@@ -9,6 +9,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,6 +25,9 @@ public abstract class Doce {
     private String sabor;
     private int kilo;
     private float valorKg;
+    @ManyToOne
+    @JoinColumn(name = "idUsuario")
+    private Usuario usuario;
 
     public Doce(){
         
@@ -76,8 +81,7 @@ public abstract class Doce {
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
-
-
+    
     public String getNome() {
         return nome;
     }
@@ -105,4 +109,12 @@ public abstract class Doce {
     public void setValorKg(Float valorKg) {
         this.valorKg = valorKg;
     }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }    
 }
