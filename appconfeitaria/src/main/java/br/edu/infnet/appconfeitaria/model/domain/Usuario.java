@@ -17,14 +17,15 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     private String nome;
     private String email;
     private String senha;
-    
     @OneToMany
     @JoinColumn(name = "idUsuario")
     private List<Cliente> clientes;
+    @OneToMany
+    @JoinColumn(name = "idUsuario")
+    private List<Doce> doces;
 
     public Usuario() {
     }
@@ -78,6 +79,13 @@ public class Usuario {
     }
     public void setClientes(List<Cliente> clientes) {
         this.clientes = clientes;
+    }
+
+    public List<Doce> getDoces() {
+        return doces;
+    }
+    public void setDoces(List<Doce> doces) {
+        this.doces = doces;
     }
 
 }
