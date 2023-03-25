@@ -11,6 +11,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appconfeitaria.model.domain.Bolo;
+import br.edu.infnet.appconfeitaria.model.domain.Usuario;
 import br.edu.infnet.appconfeitaria.model.service.BoloService;
 
 
@@ -32,15 +33,19 @@ public class BoloLoader implements ApplicationRunner{
              String[] campos = null;
 
              while(linha != null){
-                 campos = linha.split(";");
+                campos = linha.split(";");
+                
+                Usuario usuario = new Usuario();
+                usuario.setId(1);
 
-                 Bolo bolo = new Bolo(campos[0], campos[1], campos[2],
+                Bolo bolo = new Bolo(campos[0], campos[1], campos[2],
                                      Integer.parseInt(campos[3]), Float.parseFloat(campos[4]),
                                      campos[5], campos[6], Integer.parseInt(campos[7]));
+                bolo.setUsuario(usuario);
 
                 boloService.incluir(bolo);
 
-                 linha = ler.readLine();
+                linha = ler.readLine();
              }
 
              ler.close();
