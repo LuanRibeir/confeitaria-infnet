@@ -1,0 +1,3 @@
+abcdefg;Torta de Morango;Morango;1;40;false;Cobertura de Morango;true
+abcdefh;Torta de Banana;Banana;1;30;true;Cobertura de Chocolate;true
+abcdefi;Torta de Chocolate;Chocolate;1;20;false;Cobertura de Chocolate;false
