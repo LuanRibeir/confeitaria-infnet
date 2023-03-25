@@ -4,7 +4,11 @@ import java.text.DecimalFormat;
 
 import br.edu.infnet.appconfeitaria.model.exceptions.NumeroDeCaracteresInvalidoException;
 import br.edu.infnet.appconfeitaria.model.exceptions.ValorZeradoException;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "TableTorta")
 public class Torta extends Doce{
     private Boolean vegana;
     private String decoracao;
