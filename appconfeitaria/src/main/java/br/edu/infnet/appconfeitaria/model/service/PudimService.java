@@ -13,15 +13,19 @@ public class PudimService {
     @Autowired
     private PudimRepository pudimRepository;
 
-    public boolean incluir(Pudim pudim) {
-        return pudimRepository.incluir(pudim); 
+    public Pudim incluir(Pudim pudim) {
+        return pudimRepository.save(pudim); 
     }
 
-    public Pudim excluir(Integer key){
-        return pudimRepository.excluir(key);
+    public void excluir(Integer key){
+        pudimRepository.deleteById(key);
     }
 
     public Collection<Pudim> obterLista(){
-        return pudimRepository.obterLista();
+        return (Collection<Pudim>) pudimRepository.findAll();
+    }
+
+    public Pudim obterLista(Integer id){
+        return pudimRepository.findById(id).orElse(null);
     }
 }
