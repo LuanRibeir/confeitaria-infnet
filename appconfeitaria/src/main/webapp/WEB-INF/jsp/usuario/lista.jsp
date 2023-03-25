@@ -32,7 +32,8 @@
         <th>Nome</th>
         <th>E-mail</th>
         <th>Senha</th>
-        <th>Solicitantes</th>
+        <th>Clientes</th>
+        <th>Doces</th>
         <th></th>
       </tr>
     </thead>
@@ -44,6 +45,7 @@
           <td>${u.email}</td>
           <td>${u.senha}</td>
           <td>${u.clientes.size()}</td>
+          <td>${u.doces.size()}</td>
           <td>
             <form action="/usuario/${u.id}/excluir" method="get">
               <button type="submit" class="btn btn-danger">
