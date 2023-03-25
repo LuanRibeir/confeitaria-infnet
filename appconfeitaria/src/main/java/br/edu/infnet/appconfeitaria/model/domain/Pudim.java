@@ -4,7 +4,11 @@ import java.text.DecimalFormat;
 
 import br.edu.infnet.appconfeitaria.model.exceptions.NumeroDeQuantidadeInvalidoException;
 import br.edu.infnet.appconfeitaria.model.exceptions.ValorZeradoException;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "TablePudim")
 public class Pudim extends Doce{
     private String tamanho;
     private Boolean lactose;
