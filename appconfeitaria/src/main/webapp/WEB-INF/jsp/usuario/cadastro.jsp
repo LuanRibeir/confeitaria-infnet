@@ -11,6 +11,13 @@
 <body>
 	<c:import url="/WEB-INF/jsp/navbar.jsp"/>
 	<div class="container">
+		<form action="/cep" class="form-incline" method="post">
+			<label>Cep</label>
+			<input type="text" name="cep" value="01001000" class="form-control">
+			
+			<button type="submit" class="btn btn-default">Buscar</button>
+		</form>
+		
 	  <h2>Cadastro de Usuário</h2>
 	  <form action="/usuario/incluir" method="post">
 
