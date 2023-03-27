@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.appconfeitaria.model.domain.Cliente;
+import br.edu.infnet.appconfeitaria.model.domain.Endereco;
 import br.edu.infnet.appconfeitaria.model.domain.Usuario;
 import br.edu.infnet.appconfeitaria.model.service.ClienteService;
 
@@ -38,8 +39,10 @@ public class ClienteController {
     }
 
     @PostMapping(value = "/cliente/incluir")
-    public String incluir(Cliente cliente, @SessionAttribute("usuario") Usuario usuario) {
+    public String incluir(Cliente cliente, Endereco endereco, @SessionAttribute("usuario") Usuario usuario) {
         cliente.setUsuario(usuario);
+
+        cliente.setEndereco(endereco);
 
         clienteService.incluir(cliente);
 
