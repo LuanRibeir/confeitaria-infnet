@@ -28,6 +28,8 @@
             <label>Senha:</label>
             <input required value="senha" type="password" class="form-control" placeholder="Entre sua senha" name="senha">
         </div>
+
+		<c:import url="/WEB-INF/jsp/endereco/cadastro.jsp"/>
 		
 	    <button type="submit" class="btn btn-default">Cadastrar</button>
 	  </form>

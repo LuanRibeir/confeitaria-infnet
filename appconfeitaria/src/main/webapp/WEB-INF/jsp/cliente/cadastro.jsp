@@ -29,6 +29,8 @@
             <input required type="number" min="1" max="9999999999" class="form-control" placeholder="Entre o telefone." name="telefone">
         </div>
 
+		<c:import url="/WEB-INF/jsp/endereco/cadastro.jsp"/>
+
 	    <button type="submit" class="btn btn-default">Cadastrar</button>
 	  </form>
 	</div>
