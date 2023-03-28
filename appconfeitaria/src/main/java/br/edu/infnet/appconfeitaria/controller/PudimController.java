@@ -46,9 +46,13 @@ public class PudimController {
 
     @GetMapping(value = "/pudim/{id}/excluir")
     public String excluir(@PathVariable Integer id) {
-        pudimService.excluir(id);
+        try {
+            pudimService.excluir(id);
 
-        msgAlerta = "Exclussão realizada!";
+            msgAlerta = "Exclussão realizada!";
+        } catch (Exception e) {
+            msgAlerta = "Impossível realizar exclussão!";
+        }
 
         return "redirect:/pudim/lista";
     }

@@ -3,6 +3,8 @@ package br.edu.infnet.appconfeitaria.model.service;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appconfeitaria.model.domain.Pudim;
@@ -27,7 +29,7 @@ public class PudimService {
     }
 
     public Collection<Pudim> obterLista(Usuario usuario){
-        return (Collection<Pudim>) pudimRepository.obterLista(usuario.getId());
+        return (Collection<Pudim>) pudimRepository.obterLista(usuario.getId(), Sort.by(Direction.ASC, "nome"));
     }
 
     public Pudim obterLista(Integer id){

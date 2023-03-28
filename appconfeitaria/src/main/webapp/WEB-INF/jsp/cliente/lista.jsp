@@ -14,13 +14,13 @@
     <h3>Listagem de Clientes</h3>
 
     <c:if test="${not empty clientes}">       
-      <div class="alert alert-success">
-				<strong>Sucesso!</strong> ${mensagem} Quantidade de clientes cadastrados: ${clientes.size()}.
+      <div class="alert alert-info">
+				<strong>Atenção!</strong> ${mensagem} Quantidade de clientes cadastrados: ${clientes.size()}.
 			</div>
     </c:if>
 
     <c:if test="${empty clientes}">
-      <div class="alert alert-info">
+      <div class="alert alert-warning">
 				<strong>Atenção!</strong> Não existem clientes cadastrados.
 			</div>
     </c:if>

@@ -46,9 +46,13 @@ public class BoloController {
 
     @GetMapping(value = "/bolo/{id}/excluir")
     public String excluir(@PathVariable Integer id) {
-        boloService.excluir(id);
+        try {
+            boloService.excluir(id);
 
-        msgAlerta = "Exclussão realizada!";
+            msgAlerta = "Exclussão realizada!";
+        } catch (Exception e) {
+            msgAlerta = "Impossível realizar exclussão!";
+        }
 
         return "redirect:/bolo/lista";
     }

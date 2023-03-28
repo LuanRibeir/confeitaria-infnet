@@ -14,13 +14,13 @@
     <h3>Listagem de Tortas</h3>
 
     <c:if test="${not empty tortas}">       
-      <div class="alert alert-success">
-				<strong>Sucesso!</strong> ${mensagem} Quantidade de tortas cadastradas: ${tortas.size()}.
+      <div class="alert alert-info">
+				<strong>Atenção!</strong> ${mensagem} Quantidade de tortas cadastradas: ${tortas.size()}.
 			</div>
     </c:if>
 
     <c:if test="${empty tortas}">
-      <div class="alert alert-info">
+      <div class="alert alert-warning">
 				<strong>Atenção!</strong> Não existem tortas cadastradas.
 			</div>
     </c:if>

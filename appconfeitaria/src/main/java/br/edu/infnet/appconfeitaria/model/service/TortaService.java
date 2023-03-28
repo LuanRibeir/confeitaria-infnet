@@ -3,6 +3,8 @@ package br.edu.infnet.appconfeitaria.model.service;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appconfeitaria.model.domain.Torta;
@@ -27,7 +29,7 @@ public class TortaService {
     }
 
     public Collection<Torta> obterLista(Usuario usuario){
-        return (Collection<Torta>) tortaRepository.obterLista(usuario.getId());
+        return (Collection<Torta>) tortaRepository.obterLista(usuario.getId(), Sort.by(Direction.ASC, "nome"));
     }
 
     public Torta obterLista(Integer id){

@@ -14,13 +14,13 @@
     <h3>Listagem de Bolos</h3>
 
     <c:if test="${not empty bolos}">       
-      <div class="alert alert-success">
+      <div class="alert alert-info">
 				<strong>Sucesso!</strong> ${mensagem} Quantidade de bolos cadastrados: ${bolos.size()}.
 			</div>
     </c:if>
 
     <c:if test="${empty bolos}">
-      <div class="alert alert-info">
+      <div class="alert alert-warning">
 				<strong>Atenção!</strong> Não existem bolos cadastrados.
 			</div>
     </c:if>

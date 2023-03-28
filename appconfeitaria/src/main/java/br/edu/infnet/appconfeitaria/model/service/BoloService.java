@@ -3,6 +3,8 @@ package br.edu.infnet.appconfeitaria.model.service;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appconfeitaria.model.domain.Bolo;
@@ -27,7 +29,7 @@ public class BoloService {
     }
 
     public Collection<Bolo> obterLista(Usuario usuario){
-        return (Collection<Bolo>) boloRepository.obterLista(usuario.getId());
+        return (Collection<Bolo>) boloRepository.obterLista(usuario.getId(), Sort.by(Direction.ASC, "nome"));
     }
 
     public Bolo obterLista(Integer id){

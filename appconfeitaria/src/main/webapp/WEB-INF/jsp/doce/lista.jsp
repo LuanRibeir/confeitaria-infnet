@@ -14,13 +14,13 @@
     <h3>Listagem de Doces</h3>
 
     <c:if test="${not empty doces}">       
-      <div class="alert alert-success">
-				<strong>Sucesso!</strong> ${mensagem} Quantidade de doces cadastrados: ${doces.size()}.
+      <div class="alert alert-info">
+				<strong>Atenção!</strong> ${mensagem} Quantidade de doces cadastrados: ${doces.size()}.
 			</div>
     </c:if>
 
     <c:if test="${empty doces}">
-      <div class="alert alert-info">
+      <div class="alert alert-warning">
 				<strong>Atenção!</strong> Não existem doces cadastrados.
 			</div>
     </c:if>

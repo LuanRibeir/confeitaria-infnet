@@ -29,10 +29,14 @@ public class DoceController {
 
     @GetMapping(value = "/doce/{id}/excluir")
     public String excluir(@PathVariable Integer id) {
-        doceService.excluir(id);
+        try {
+            doceService.excluir(id);
 
-        msgAlerta = "Exclussão realizada!";
-
+            msgAlerta = "Exclussão realizada!";
+        } catch (Exception e) {
+            msgAlerta = "Impossível realizar exclussão!";
+        }
+        
         return "redirect:/doce/lista";
     }
 }

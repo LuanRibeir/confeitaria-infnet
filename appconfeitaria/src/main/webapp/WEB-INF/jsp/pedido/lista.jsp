@@ -14,13 +14,13 @@
     <h3>Listagem de Pedidos</h3>
 
     <c:if test="${not empty pedidos}">       
-      <div class="alert alert-success">
-				<strong>Sucesso!</strong> ${mensagem} Quantidade de pedidos cadastrados: ${pedidos.size()}.
+      <div class="alert alert-info">
+				<strong>Atenção!</strong> ${mensagem} Quantidade de pedidos cadastrados: ${pedidos.size()}.
 			</div>
     </c:if>
 
     <c:if test="${empty pedidos}">
-      <div class="alert alert-info">
+      <div class="alert alert-warning">
 				<strong>Atenção!</strong> Não existem pedidos cadastrados.
 			</div>
     </c:if>

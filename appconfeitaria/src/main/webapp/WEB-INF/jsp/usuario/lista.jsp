@@ -14,13 +14,13 @@
     <h3>Listagem de Usuários</h3>
 
     <c:if test="${not empty usuarios}">       
-      <div class="alert alert-success">
-				<strong>Sucesso!</strong> ${mensagem} Quantidade de usuários cadastrados: ${usuarios.size()}.
+      <div class="alert alert-info">
+				<strong>Atenção!</strong> ${mensagem} Quantidade de usuários cadastrados: ${usuarios.size()}.
 			</div>
     </c:if>
 
     <c:if test="${empty usuarios}">
-      <div class="alert alert-info">
+      <div class="alert alert-warning">
 				<strong>Atenção!</strong> Não existem usuários cadastrados.
 			</div>
     </c:if>
@@ -32,9 +32,14 @@
         <th>Nome</th>
         <th>E-mail</th>
         <th>Senha</th>
+        <th>Admin</th>
+        <th>Endereço</th>
         <th>Clientes</th>
         <th>Doces</th>
-        <th></th>
+        <th>Pedidos</th>
+        <c:if test="${usuario.admin}">
+          <th></th>
+        </c:if>
       </tr>
     </thead>
     <tbody>
@@ -44,15 +49,20 @@
           <td>${u.nome}</td>
           <td>${u.email}</td>
           <td>${u.senha}</td>
+          <td>${u.admin}</td>
+          <td>${u.endereco}</td>
           <td>${u.clientes.size()}</td>
           <td>${u.doces.size()}</td>
-          <td>
-            <form action="/usuario/${u.id}/excluir" method="get">
-              <button type="submit" class="btn btn-danger">
-                <span class="glyphicon glyphicon-remove"></span>
-              </button>
-            </form> 
-        </td>
+          <td>${u.pedidos.size()}</td>
+          <c:if test="${usuario.admin}">
+            <td>
+              <form action="/usuario/${u.id}/excluir" method="get">
+                <button type="submit" class="btn btn-danger">
+                  <span class="glyphicon glyphicon-remove"></span>
+                </button>
+              </form> 
+            </td>
+          </c:if>
         </tr>
       </c:forEach>
     </tbody>

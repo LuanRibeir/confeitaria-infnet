@@ -46,9 +46,13 @@ public class TortaController {
 
     @GetMapping(value = "/torta/{id}/excluir")
     public String excluir(@PathVariable Integer id) {
-        tortaService.excluir(id);
+        try {
+            tortaService.excluir(id);
 
-        msgAlerta = "Exclussão realizada!";
+            msgAlerta = "Exclussão realizada!";
+        } catch (Exception e) {
+            msgAlerta = "Impossível realizar exclussão!";
+        }
 
         return "redirect:/torta/lista";
     }

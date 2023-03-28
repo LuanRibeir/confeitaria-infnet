@@ -14,13 +14,13 @@
     <h3>Listagem de Pudins</h3>
 
     <c:if test="${not empty pudins}">       
-      <div class="alert alert-success">
-				<strong>Sucesso!</strong> ${mensagem} Quantidade de pudins cadastrados: ${pudins.size()}.
+      <div class="alert alert-info">
+				<strong>Atenção!</strong> ${mensagem} Quantidade de pudins cadastrados: ${pudins.size()}.
 			</div>
     </c:if>
 
     <c:if test="${empty pudins}">
-      <div class="alert alert-info">
+      <div class="alert alert-warning">
 				<strong>Atenção!</strong> Não existem pudins cadastrados.
 			</div>
     </c:if>
