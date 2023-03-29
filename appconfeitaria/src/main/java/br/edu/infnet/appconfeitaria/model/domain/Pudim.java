@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 @Table(name = "TablePudim")
 public class Pudim extends Doce{
     private String tamanho;
-    private Boolean lactose;
+    private Boolean lactose = false;
     private int quantidade;
 
     public Pudim(){

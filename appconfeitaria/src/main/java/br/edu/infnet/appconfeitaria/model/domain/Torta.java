@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "TableTorta")
 public class Torta extends Doce{
-    private Boolean vegana;
+    private Boolean vegana = false;
     private String decoracao;
     private Boolean isDoce; //doce ou salgada
 
