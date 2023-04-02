@@ -69,8 +69,6 @@
 									</div>
 								</div>
 							</c:if>
-							<li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">Sobre</a>
-							</li>
 							<c:if test="${empty usuario}">
 								<li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/usuario">Sign
 										Up</a></li>
@@ -93,14 +91,16 @@
 						<img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="assets/img/intro.jpg" alt="..." />
 						<div class="intro-text left-0 text-center bg-faded p-5 rounded">
 							<h2 class="section-heading mb-4">
-								<span class="section-heading-upper">Fresh Coffee</span>
-								<span class="section-heading-lower">Worth Drinking</span>
+								<span class="section-heading-upper">Bem-Vindo(a)!</span>
+								<span class="section-heading-lower">Tornando sonhos em realidade</span>
 							</h2>
-							<p class="mb-3">Every cup of our quality artisan coffee starts with locally sourced, hand
-								picked ingredients. Once you try it, our coffee will be a blissful addition to your
-								everyday morning routine - we guarantee it!</p>
-							<div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">Visit Us
-									Today!</a></div>
+							<p class="mb-3">Na Confeitaria Infnet, acreditamos que cada ocasião especial merece um
+								bolo único e personalizado. Nossa equipe de confeiteiros e decoradores especializados
+								pode criar bolos personalizados que combinam com seu tema e visão. Se você precisa de um
+								bolo para qualquer evento especial, estamos aqui para tornar seus sonhos realidade.
+							</p>
+							<!-- <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">Visit Us
+									Today!</a></div> -->
 						</div>
 					</div>
 				</div>
@@ -111,13 +111,17 @@
 						<div class="col-xl-9 mx-auto">
 							<div class="cta-inner bg-faded text-center rounded">
 								<h2 class="section-heading mb-4">
-									<span class="section-heading-upper">Our Promise</span>
-									<span class="section-heading-lower">To You</span>
+									<span class="section-heading-upper">Engenharia de Software</span>
+									<span class="section-heading-upper">Projeto de Bloco: Desenvolvimento Java</span>
+									<span class="section-heading-upper">Aluno: Luan Eduardo Ribeiro Almeida</span>
+									<span class="section-heading-upper">Prof.: Elberth Lins Costa de Moraes</span>
 								</h2>
-								<p class="mb-0">When you walk into our shop to start your day, we are dedicated to
-									providing you with friendly service, a welcoming atmosphere, and above all else,
-									excellent products made with the highest quality ingredients. If you are not
-									satisfied, please let us know and we will do whatever we can to make things right!
+								<p class="mb-0">Gestão de Confeitaria feito como assessment do curso de Java do
+									Instituto Infnet. Como qualquer
+									trabalho de
+									compra e venda vem a responsabilidade de manter um preço fiel e contas
+									exatas. Esse App faz com que essas encargos sejam tirados de sua mente e
+									compactadas em um só um ambiente.
 								</p>
 							</div>
 						</div>

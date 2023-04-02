@@ -69,8 +69,6 @@
 									</div>
 								</div>
 							</c:if>
-							<li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">Sobre</a>
-							</li>
 							<c:if test="${empty usuario}">
 								<li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/usuario">Sign
 										Up</a></li>

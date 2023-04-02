@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 		<!DOCTYPE html>
 		<html lang="pt-br">
@@ -68,8 +68,6 @@
 								</div>
 							</div>
 						</c:if>
-						<li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">Sobre</a>
-						</li>
 						<c:if test="${empty usuario}">
 							<li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/usuario">Sign
 									Up</a></li>
@@ -163,25 +161,13 @@
 						<div class="col-xl-9 col-lg-10 mx-auto">
 							<div class="bg-faded rounded p-5">
 								<h2 class="section-heading mb-4">
-									<span class="section-heading-upper">Strong Coffee, Strong Roots</span>
-									<span class="section-heading-lower">About Our Cafe</span>
+									<span class="section-heading-upper">Bolos, Tortas e Pudins</span>
+									<span class="section-heading-lower">Sobre a nossa Confeitaria</span>
 								</h2>
-								<p>Founded in 1987 by the Hernandez brothers, our establishment has been serving up
-									rich
-									coffee sourced from artisan farmers in various regions of South and Central
-									America. We
-									are dedicated to travelling the world, finding the best coffee, and bringing
-									back to you
-									here in our cafe.</p>
-								<p class="mb-0">
-									We guarantee that you will fall in
-									<em>lust</em>
-									with our decadent blends the moment you walk inside until you finish your last
-									sip. Join
-									us for your daily routine, an outing with friends, or simply just to enjoy some
-									alone
-									time.
-								</p>
+								<p>Na Confeitaria Infnet, acreditamos que cada ocasião especial merece um bolo único e
+									personalizado. Nossa equipe de confeiteiros e decoradores especializados pode criar
+									bolos personalizados que combinam com seu tema e visão. Se você precisa de um bolo
+									para qualquer evento especial, estamos aqui para tornar seus sonhos realidade. </p>
 							</div>
 						</div>
 					</div>
